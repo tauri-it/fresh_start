@@ -23,7 +23,8 @@ if 'darwin' in os_chk.lower():
         "dbeaver-community",
         "java",
         "iterm2",
-        "slack"
+        "slack",
+        "cyberduck"
     ]
     bash_profile_path = os.path.expanduser('~')
     bash_git_content = 'if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then \n' \
