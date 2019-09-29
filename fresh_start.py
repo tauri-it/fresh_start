@@ -16,6 +16,7 @@ if 'darwin' in os_chk.lower():
     cask_packages = [
         "visual-studio-code",
         "pycharm-ce",
+        "virtualbox",
         "google-chrome",
         "firefox",
         "spotify",
