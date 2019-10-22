@@ -11,7 +11,8 @@ if 'darwin' in os_chk.lower():
         "git",
         "awscli",
         "terraform",
-        "bash-git-prompt"
+        "bash-git-prompt",
+        "go"
     ]
     cask_packages = [
         "visual-studio-code",
