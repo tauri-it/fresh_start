@@ -11,11 +11,14 @@ if 'darwin' in os_chk.lower():
         "git",
         "awscli",
         "terraform",
-        "bash-git-prompt"
+        "bash-git-prompt",
+        "go",
+        "htop"
     ]
     cask_packages = [
         "visual-studio-code",
         "pycharm-ce",
+        "virtualbox",
         "google-chrome",
         "firefox",
         "spotify",
@@ -23,7 +26,9 @@ if 'darwin' in os_chk.lower():
         "dbeaver-community",
         "java",
         "iterm2",
-        "slack"
+        "slack",
+        "cyberduck",
+        "google-drive-file-stream"
     ]
     bash_profile_path = os.path.expanduser('~')
     bash_git_content = 'if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then \n' \
