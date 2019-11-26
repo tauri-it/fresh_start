@@ -13,7 +13,8 @@ if 'darwin' in os_chk.lower():
         "terraform",
         "bash-git-prompt",
         "go",
-        "htop"
+        "htop",
+        "vault"
     ]
     cask_packages = [
         "visual-studio-code",
