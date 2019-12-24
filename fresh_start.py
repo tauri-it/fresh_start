@@ -29,7 +29,8 @@ def install_mac_packages():
         "iterm2",
         "slack",
         "cyberduck",
-        "google-drive-file-stream"
+        "google-drive-file-stream",
+        "sublime-text"
     ]
     bash_profile_path = os.path.expanduser('~')
     bash_git_content = 'if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then \n' \
