@@ -2,7 +2,7 @@
 **Pre-Requisites**: 
 - Internet access
 - Admin rights
-- Python2.7 or greater installed  
+- Python3.6 or greater installed  
 
 --- 
 
