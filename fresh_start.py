@@ -11,7 +11,6 @@ def install_mac_packages():
         "git",
         "awscli",
         "terraform",
-        "bash-git-prompt",
         "go",
         "htop",
         "vault"
@@ -30,13 +29,9 @@ def install_mac_packages():
         "slack",
         "cyberduck",
         "google-drive-file-stream",
-        "sublime-text"
+        "sublime-text",
+        "postman"
     ]
-    bash_profile_path = os.path.expanduser('~')
-    bash_git_content = 'if [ -f "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh" ]; then \n' \
-                       ' __GIT_PROMPT_DIR=$(brew --prefix)/opt/bash-git-prompt/share GIT_PROMPT_ONLY_IN_REPO=1 \n' \
-                       'source "$(brew --prefix)/opt/bash-git-prompt/share/gitprompt.sh \n' \
-                       'fi'
 
     if not os.path.exists(homebrew_dir_chk):
         print('Homebrew is not installed, installing now...\n')
@@ -48,25 +43,15 @@ def install_mac_packages():
         print('Homebrew is already installed \n')
 
     for brew_package in brew_packages:
-        print('Installing package: {} \n'.format(brew_package))
-        os.system('brew install {}'.format(brew_package))
+        print(f'Installing package: {brew_package} \n')
+        os.system(f'brew install {brew_package}')
 
     for cask_package in cask_packages:
-        print('Installing package: {} \n'.format(cask_package))
-        os.system('brew cask install {}'.format(cask_package))
-
-    if not os.path.exists(bash_profile_path + '/.bash_profile'):
-        with open(bash_profile_path + '~/.bash_profile', 'w') as file:
-            file.write(bash_git_content)
-            file.close()
-    else:
-        with open(bash_profile_path + '~/.bash_profile', 'a+') as file:
-            file.write(bash_git_content)
-            file.close()
+        print(f'Installing package: {cask_package} \n')
+        os.system(f'brew cask install {cask_package}')
 
 
 def install_win_packages():
-    choco_dir_chk = "C:\\ProgramData\\chocolatey\\"
     packages = [
         "git",
         "tortoisegit",
@@ -96,6 +81,7 @@ def install_win_packages():
         "golang"
     ]
 
+    choco_dir_chk = "C:\\ProgramData\\chocolatey\\"
     if not os.path.exists(choco_dir_chk):
         print('Chocolatey is not installed, installing now...\n')
         os.system(
@@ -108,8 +94,8 @@ def install_win_packages():
 
     choco = choco_dir_chk + '\\choco.exe'
     for package in packages:
-        print('Installing package: {} \n'.format(package))
-        os.system(choco + ' install {} -y'.format(package))
+        print(f'Installing package: {package} \n')
+        os.system(f'{choco} install {package} -y')
 
     print('Downloading and executing FreshStart.ps1...\n')
 
